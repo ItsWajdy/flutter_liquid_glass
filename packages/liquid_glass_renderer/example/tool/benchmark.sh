@@ -68,6 +68,22 @@ if [ ! -f "test_driver/perf_driver.dart" ]; then
     exit 1
 fi
 
+# Clean up previous benchmark results
+print_info "Cleaning up previous benchmark results..."
+if [ -d "build" ]; then
+    EXISTING_FILES=$(find build -name "*.timeline*.json" 2>/dev/null | wc -l)
+    if [ "$EXISTING_FILES" -gt 0 ]; then
+        print_info "Removing $EXISTING_FILES existing timeline files..."
+        find build -name "*.timeline.json" -delete 2>/dev/null || true
+        find build -name "*.timeline_summary.json" -delete 2>/dev/null || true
+        print_success "Previous benchmark results cleaned up"
+    else
+        print_info "No existing timeline files to clean up"
+    fi
+else
+    print_info "No build directory found, nothing to clean up"
+fi
+
 # Run the benchmark
 print_info "Starting performance benchmark tests on $MACOS_DEVICE..."
 print_warning "This may take several minutes..."
