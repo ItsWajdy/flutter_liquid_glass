@@ -1,3 +1,14 @@
+## 0.1.1-dev.12
+
+> Note: This release has breaking changes.
+
+ - **FIX**: regression in how `LiquidGlass` applies transform to children.
+ - **FEAT**: add `GlassGlowLayer` and `GlassGlow` widget for glow effects.
+ - **FEAT**: add `StretchGlass` widget that can stretch its child with user gestures.
+ - **FEAT**: add `FakeGlass` widget that aims to match `LiquidGlass` appearance while being much more performant.
+ - **BREAKING** **REFACTOR**: remove useless `lightness` parameter from shader and `LiquidGlassSettings`.
+ - **BREAKING** **REFACTOR**: change default value of `glassContainsChild` to false.
+
 ## 0.1.1-dev.11
 
 > Note: This release has breaking changes.
