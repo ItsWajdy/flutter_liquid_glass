@@ -123,7 +123,8 @@ class GlassGlowLayerState extends State<GlassGlowLayer>
   late final _radiusController = SingleMotionController(
     vsync: this,
     motion: const Motion.smoothSpring(),
-  )..value = 1;
+    initialValue: 1,
+  );
 
   bool _dragging = false;
   double _baseRadius = 0;
@@ -257,6 +258,12 @@ class _RenderGlassGlowLayer extends RenderProxyBox {
 
   @override
   void paint(PaintingContext context, Offset offset) {
+    if (_glowColor.a == 0 || _glowRadius <= 0) {
+      // No glow to paint
+      super.paint(context, offset);
+      return;
+    }
+
     final canvas = context.canvas;
     final bounds = offset & size;
 
