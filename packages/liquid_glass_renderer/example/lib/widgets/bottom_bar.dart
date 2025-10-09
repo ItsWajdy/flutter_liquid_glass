@@ -120,7 +120,7 @@ class _LiquidGlassBottomBarState extends State<LiquidGlassBottomBar> {
           spacing: widget.spacing,
           children: [
             Expanded(
-              child: StretchGlass(
+              child: LiquidStretch(
                 stretch: .2,
                 child: LiquidGlass.inLayer(
                   clipBehavior: Clip.none,
@@ -310,7 +310,7 @@ class _ExtraButtonState extends State<_ExtraButton> {
     final theme = CupertinoTheme.of(context);
     return GestureDetector(
       onTap: widget.config.onTap,
-      child: StretchGlass(
+      child: LiquidStretch(
         child: Semantics(
           button: true,
           label: widget.config.label,

@@ -64,7 +64,7 @@ class BasicApp extends HookWidget {
                     mainAxisSize: MainAxisSize.min,
                     spacing: 16,
                     children: [
-                      StretchGlass(
+                      LiquidStretch(
                         child: LiquidGlass(
                           settings: settings,
                           shape: LiquidRoundedSuperellipse(
@@ -78,7 +78,7 @@ class BasicApp extends HookWidget {
                           ),
                         ),
                       ),
-                      StretchGlass(
+                      LiquidStretch(
                         child: FakeGlass(
                           settings: settings,
                           shape: LiquidRoundedSuperellipse(

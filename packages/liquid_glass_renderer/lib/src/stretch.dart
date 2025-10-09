@@ -10,10 +10,10 @@ import 'package:motor/motor.dart';
 ///
 /// Will listen to drag gestures from the user without interfering with other
 /// gestures.
-class StretchGlass extends StatelessWidget {
-  /// Creates a new [StretchGlass] widget with the given [child],
+class LiquidStretch extends StatelessWidget {
+  /// Creates a new [LiquidStretch] widget with the given [child],
   /// [interactionScale], and [stretch].
-  const StretchGlass({
+  const LiquidStretch({
     required this.child,
     this.interactionScale = 1.05,
     this.stretch = .5,
@@ -42,6 +42,10 @@ class StretchGlass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (stretch == 0 && interactionScale == 1.0) {
+      return child;
+    }
+
     return GlassDragBuilder(
       builder: (context, value, child) {
         final scale = value == null ? 1.0 : interactionScale;
@@ -83,6 +87,11 @@ class _RawGlassStretch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (stretch == Offset.zero) {
+      // Skip any transformations if there's no stretch
+      return child;
+    }
+
     final scale = getScale(stretch: stretch);
     final matrix = Matrix4.identity()
       ..scaleByDouble(scale.dx, scale.dy, 1, 1)
