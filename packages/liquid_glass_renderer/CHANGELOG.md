@@ -1,3 +1,7 @@
+## 0.1.1-dev.14
+
+ - **FIX**: `LiquidGlassLayer` breaks when no child glass widgets are found.
+
 ## 0.1.1-dev.13
 
  - **DOCS**: update README and add better disclaimer (#80).
