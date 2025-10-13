@@ -1,3 +1,15 @@
+## 0.1.1-dev.19
+
+> Note: This release has breaking changes.
+
+ - **FIX**: revert matrix methods to support older Flutter versions again.
+ - **FIX**: `TileMode.mirror` in `FakeGlass` blur.
+ - **FEAT**: allow customizing `resistance` in `LiquidStretch`.
+ - **FEAT**: expose `RawLiquidStretch` for custom pixel-based stretching.
+ - **FEAT**: expose `Offset.withResistance` extension method.
+ - **BREAKING** **REFACTOR**: move `Glassify` to an `experimental.dart` import.
+ - **BREAKING** **FEAT**: `LiquidStretch` now bases its stretch on the child's size.
+
 ## 0.1.1-dev.18
 
  - **FIX**: removed unused transform from shader (#88).
