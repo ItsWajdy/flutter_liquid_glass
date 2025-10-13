@@ -79,10 +79,22 @@ class LiquidStretch extends StatelessWidget {
   }
 }
 
-class _RawGlassStretch extends SingleChildRenderObjectWidget {
-  const _RawGlassStretch({
+/// {@template raw_liquid_stretch}
+/// Use this widget to apply a custom stretch effect in pixels to its child.
+///
+/// You can control the stretch effect by providing an [Offset] in pixels
+/// via the [stretchPixels] property.
+///
+/// If you simply want to apply a stretch effect based on user drag gestures,
+/// consider using [LiquidStretch] instead, which provides built-in drag
+/// handling and resistance.
+/// {@endtemplate}
+class RawLiquidStretch extends SingleChildRenderObjectWidget {
+  /// {@macro raw_liquid_stretch}
+  const RawLiquidStretch({
     required this.stretchPixels,
     required super.child,
+    super.key,
   });
 
   /// The stretch offset in pixels.
