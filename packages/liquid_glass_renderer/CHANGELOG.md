@@ -1,3 +1,17 @@
+## 0.1.1-dev.22
+
+> Note: This release has breaking changes.
+
+ - **FIX**: reduce texture samples (#94).
+ - **FEAT**: small performance wins in shader (#91).
+ - **BREAKING** **REFACTOR**: remove `restrictThickness`.
+ - **BREAKING** **FEAT**: rewrote the rendering process to use two passes.
+
+    This significantly improves performance while glass elements
+    are static on screen. Moving glass elements will still induce the same
+    performance cost as before.
+
+
 ## 0.1.1-dev.21
 
 > Note: This release has breaking changes.
