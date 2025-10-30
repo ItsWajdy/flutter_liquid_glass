@@ -1,7 +1,8 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/foundation.dart';
+import 'package:flutter/foundation.dart' hide internal;
 import 'package:flutter/rendering.dart';
+import 'package:meta/meta.dart';
 
 @internal
 mixin TransformTrackingRepaintBoundaryMixin on RenderProxyBox {

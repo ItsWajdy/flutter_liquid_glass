@@ -3,6 +3,7 @@ import 'dart:math';
 import 'dart:ui' as ui;
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
@@ -15,6 +16,7 @@ import 'package:liquid_glass_renderer/src/logging.dart';
 import 'package:meta/meta.dart';
 
 @internal
+@pragma('vm:platform-const-if', !kDebugMode)
 bool debugPaintLiquidGlassGeometry = false;
 
 /// A render object that can assemble [RenderLiquidGlassGeometry] shapes and
@@ -281,7 +283,11 @@ abstract class LiquidGlassRenderObject extends RenderProxyBox {
           bounds.top,
         )
         ..scale(1 / devicePixelRatio)
-        ..drawImage(geometryImage, offset * devicePixelRatio, Paint())
+        ..drawImage(
+          geometryImage,
+          offset * devicePixelRatio,
+          Paint()..blendMode = BlendMode.src,
+        )
         ..restore();
     }
   }
