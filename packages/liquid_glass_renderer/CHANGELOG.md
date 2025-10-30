@@ -1,3 +1,24 @@
+## 0.2.0-dev.1
+
+> Note: This release has breaking changes.
+
+ - **FIX**: adjust `LiquidGlassSettings` defaults to match the look more closely.
+ - **FEAT**: cache geometry images as well to make sure we only run the geometry shader when absolutely necessary.
+ - **DOCS**: mention Impeller requirement earlier in README.
+ - **DOCS**: update README with newest changes and performance tips.
+ - **BREAKING** **REFACTOR**: renamed many constructors and default `LiquidGlass` to not creating its own layer.
+
+    Please read the README to understand how to use this package.
+
+ - **BREAKING** **REFACTOR**: `LiquidGlassShape`s now take a simple double as radius.
+ - **BREAKING** **REFACTOR**: move `blend` setting from `LiquidGlassSettings` to `LiquidGlassBlendGroup`.
+ - **BREAKING** **FEAT**: adjust fake glass light intensity.
+ - **BREAKING** **FEAT**: rewrote rendering pass to use two passes.
+
+    We now cache all geometry into textures first, then render liquid glass in a second pass.
+    This allows us to save a lot of cycles while glass shapes are static.
+
+
 ## 0.1.1-dev.26
 
 > Note: This release has breaking changes.
