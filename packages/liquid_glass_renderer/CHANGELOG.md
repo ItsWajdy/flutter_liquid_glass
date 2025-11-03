@@ -1,3 +1,12 @@
+## 0.2.0-dev.3
+
+ - **FIX**: improve logging readability and names.
+ - **FIX**: don't create intermediate images for geometry until it's settled.
+
+    This should decrease memory consumption somewhat, as a layer with one animating geometry would create 2 images per frame before
+
+ - **FEAT**: export `debugPaintLiquidGlassGeometry` (#111).
+
 ## 0.2.0-dev.2
 
  - **FIX**: glass was always grouped no matter which constructor was used.
