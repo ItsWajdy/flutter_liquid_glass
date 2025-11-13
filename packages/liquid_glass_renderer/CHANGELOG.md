@@ -1,3 +1,9 @@
+## 0.2.0-dev.4
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **FIX**: fake glass didn't render properly on skia and had bad specular highlights (#119).
+
 ## 0.2.0-dev.3
 
  - **FIX**: improve logging readability and names.
