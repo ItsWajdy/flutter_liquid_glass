@@ -8,7 +8,7 @@
 
 > ## ⚠️ **EXPERIMENTAL - USE WITH CAUTION**
 >
-> **This package is still experimental and should not be blindly added to production apps for all devices.** While performance has improved significantly, liquid glass effects in Flutter are computationally intensive due to the limited access to the GPUand may not perform well on all hardware configurations. 
+> **This package is still experimental and should not be blindly added to production apps for all devices.** While performance has improved significantly, liquid glass effects in Flutter are computationally intensive due to the limited access to the GPU and may not perform well on all hardware configurations. 
 > 
 > **Before deploying to production:**
 > - **Take a look at the [Limitations](#limitations) and [Performance](#-a-word-on-performance) sections** before even thinking about using this package in production.
